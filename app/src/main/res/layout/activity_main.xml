@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.clock.clockin.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="383dp"
+        android:layout_height="515dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <Button
+            android:id="@+id/Sent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="74dp"
+            android:layout_marginLeft="135dp"
+            android:layout_marginStart="135dp"
+            android:text="Sent Result" />
+
+        <Button
+            android:id="@+id/clockIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="Clock In" />
+
+        <Button
+            android:id="@+id/clockOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/clockIn"
+            android:layout_marginTop="54dp"
+            android:text="Clock Out" />
+
+        <Button
+            android:id="@+id/startBreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/Sent"
+            android:layout_alignRight="@+id/Sent"
+            android:layout_centerVertical="true"
+            android:text="Start Break" />
+
+        <Button
+            android:id="@+id/endBreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/clockOut"
+            android:layout_alignBottom="@+id/clockOut"
+            android:layout_alignLeft="@+id/startBreak"
+            android:layout_alignStart="@+id/startBreak"
+            android:text="End Break" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginTop="17dp"
+            android:text="Clock In at: " />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="20dp"
+            android:text="Clock Out at: " />
+
+        <TextView
+            android:id="@+id/clockInText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignLeft="@+id/clockOutText"
+            android:layout_alignStart="@+id/clockOutText"
+            android:hint="You haven't clock in yet"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/clockOutText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView5"
+            android:layout_alignLeft="@+id/totalHoursText"
+            android:layout_alignStart="@+id/totalHoursText"
+            android:hint="You haven't clock out yet"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="16dp"
+            android:text="Total working hours:" />
+
+        <TextView
+            android:id="@+id/totalHoursText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView5"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_toEndOf="@+id/textView5"
+            android:layout_toRightOf="@+id/textView5"
+            android:hint="You haven't clock out yet"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView5"
+            android:layout_alignStart="@+id/textView5"
+            android:layout_below="@+id/textView5"
+            android:layout_marginTop="15dp"
+            android:text="Start Break at: " />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView9"
+            android:layout_alignStart="@+id/textView9"
+            android:layout_below="@+id/textView9"
+            android:layout_marginTop="13dp"
+            android:text="End Break at: " />
+
+        <TextView
+            android:id="@+id/startBreakText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView9"
+            android:layout_alignBottom="@+id/textView9"
+            android:layout_alignLeft="@+id/totalHoursText"
+            android:layout_alignStart="@+id/totalHoursText"
+            android:hint="You haven't start break yet"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/endBreakText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView10"
+            android:layout_alignBottom="@+id/textView10"
+            android:layout_alignLeft="@+id/startBreakText"
+            android:layout_alignStart="@+id/startBreakText"
+            android:hint="You haven't end break yet"
+            android:text="" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
