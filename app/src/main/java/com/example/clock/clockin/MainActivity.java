@@ -1,7 +1,9 @@
+
 package com.example.clock.clockin;
 
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.PublicKey;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,14 +20,13 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    String clockInTime = null;
-    String clockOutTime = null;
-    String totalWorkingHours = null;
-    String startBreakTime = null;
-    String endBreakTime = null;
-    String tempBreakTime = null;
-    float totalBreakTime = 0.00f;
-    int numberOfBreak = 0;
+
+
+
+
+
+    String data = "dsdsdsdsdsdsd";
+    String file = "mydata";
 
     public String getTime(){
         Calendar calendar = Calendar.getInstance();
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         float totalhrs = diff/60;
         DecimalFormat df = new DecimalFormat("#.00");
         String out = df.format(totalhrs);
-       return out;
+        return out;
     }
 
     public int minsConverter(String s){
@@ -70,9 +72,56 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+    public static final String SHARED_PREFS = "sharedpreds";
+    public static final String TEXT = "text";
+    public static final String CLOCLINTIME = "clickintime";
+    public static final String CLOCLOUTTIME = "clickouttime";
+    public static final String TOTALWORKINGHOURS = "totalworkinghours";
+    public static final String STARTBREAKTIME = "startbreaktime";
+    public static final String ENDBREAKTIME = "endbreaktime";
+    public static final String TEMPBREAKTIME = "tempbreaktime";
+    public static final float TOTALBREAKTIME = 0.00f;
+    public static final int NUMBEROFBREAK = 0;
+    private String text;
+    String clockInTime = null;
+    String clockOutTime = null;
+    String totalWorkingHours = null;
+    String startBreakTime = null;
+    String endBreakTime = null;
+    String tempBreakTime = null;
+    float totalBreakTime = 0.00f;
+    int numberOfBreak = 0;
+
+    public void save(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(TEXT,"this is saved");
+        editor.apply();
+    }
+
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        text = sharedPreferences.getString(TEXT,"");
+        clockInTime = sharedPreferences.getString(CLOCLINTIME,"not data");
+        Toast.makeText(getApplicationContext(), clockInTime, Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void clearData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(TEXT,"");
+        editor.apply();
+    }
+
+
+
     ///////////
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -113,6 +162,11 @@ public class MainActivity extends AppCompatActivity {
                 clockInText.setText(getTime());
                 clockInTime = getTime();
                 Toast.makeText(getApplicationContext(), "Clock in at: " + getTime(), Toast.LENGTH_SHORT).show();
+
+                SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(CLOCLINTIME,clockInTime);
+                editor.apply();
             }
         });
 
@@ -157,7 +211,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button debugPage = (Button) findViewById(R.id.buttonDebugPage);
+        debugPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Intent = new Intent(MainActivity.this, DebugActivity.class);
+                startActivity(Intent);
+            }
+        });
 
-        //debug
+
+
+
+
+
+
+
     }
 }
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.clock.clockin.DebugActivity"
+    tools:showIn="@layout/activity_debug">
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="494dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonClear"
+            android:layout_alignLeft="@+id/buttonClear"
+            android:layout_alignStart="@+id/buttonClear"
+            android:layout_marginBottom="12dp"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/buttonClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonDebugDisplay"
+            android:layout_alignLeft="@+id/buttonDebugDisplay"
+            android:layout_alignStart="@+id/buttonDebugDisplay"
+            android:layout_marginBottom="14dp"
+            android:text="Clear" />
+
+        <Button
+            android:id="@+id/buttonDebugDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="181dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginStart="64dp"
+            android:text="Display" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

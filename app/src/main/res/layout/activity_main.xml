@@ -170,5 +170,14 @@
             android:hint="You haven't end break yet"
             android:text="" />
 
+        <Button
+            android:id="@+id/buttonDebugPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="Debug Page" />
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
